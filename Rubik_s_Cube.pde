@@ -107,20 +107,20 @@ void setup() {
   image(cubeBack, blueLoc[0][0], blueLoc[0][1], 198, 198);
   image(cubeBack, yellowLoc[0][0], yellowLoc[0][1], 198, 198);
   
-  //cam = new Capture(this, 320, 240, 30);
-  //cam.start();
+  cam = new Capture(this, 320, 240, 30);
+  cam.start();
   
 }
 
 void draw() {
-  //if(cam.available()) {
-  //  cam.read();
-  //  image(cam, 680, 0);
-  //  image(cubeBack, 740, 20, 200, 200);
-  //} else if (confirmed && !covered) {
+  if(cam.available()) {
+    cam.read();
+    image(cam, 680, 0);
+    image(cubeBack, 740, 20, 200, 200);
+  } else if (confirmed && !covered) {
     image(loadImage("grey.png"), 600, 0, 400, 240);
     covered = true;
-  //}
+  }
   
 }
 
